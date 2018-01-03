@@ -6,57 +6,40 @@
 # Twitter = @commonexploits
 # 19/12/2012
 # Tested on Bactrack 5 only.
+# Now tested on Kali seems to work fine
 
 # Import info - read first!
-
-# Nmap Lazy Script - For Internal Inf Testing. tested only on BT5 gnome. Scans should launch 4x terminals at once, may only work on BT5!
-# 
+# Nmap Lazy Script - For Internal Inf Testing. Tested on Kali. 
 # For the auto creation of a custom Nessus policy - export and place one policy file within the same directory as the script with any filename or extension - it will find it use this as a template.
 # For Nessus template use ensure the following options are set UDP SCAN=ON, SNMP SCAN=ON, SYN SCAN=ON,  PING HOST=OFF, TCP SCAN=OFF - the script will enable safe checks and consider unscanned ports as closed - double check before scanning.
 
-
 #####################################################################################
 # Released as open source by NCC Group Plc - http://www.nccgroup.com/
-
 # Developed by Daniel Compton, daniel dot compton at nccgroup dot com
-
 # https://github.com/nccgroup/vlan-hopping
-
-#Released under AGPL see LICENSE for more information
-
+# Released under AGPL see LICENSE for more information
 ######################################################################################
-
-
-
 
 VERSION="1.8"
 
 #####################################################################################################################
-
 # User config options
-
 # Turn on/off Nmap scan options
-
 FULLTCP="on" # to disable/enable Full TCP Scan set to "off" / "on"
 SCRIPT="on" # to disable/enable safe script Scan set to "off" / "on"
 QUICKUDP="on" # to disable/enable quick UDP scan set to "off" / "on" 
 COMMONTCP="on" # to disable/enabke commong TCP scan set to "off" / "on"
-
 ######################################################################################################################
 # Script Starts
 
 clear
 echo -e "\e[00;32m#############################################################\e[00m"
-echo ""
 echo "***   Lazymap - Internal Auto Nmap Script Version $VERSION  ***"
-echo ""
 echo -e "\e[00;32m#############################################################\e[00m"
 echo ""
 echo ""
 echo -e "\e[1;33mIf any of the scans are too slow, press Ctrl c to auto switch to a T5 scans\e[00m"
-echo ""
 echo -e "\e[1;33mIt can auto create you a custom Nessus policy based on only the unique open ports for faster scanning - see script header for details\e[00m"
-echo ""
 echo -e "\e[1;33mAll output including hosts up, down, unique ports and an audit of each scan start stop times can be found in the output directory.\e[00m"
 echo ""
 echo -e "\e[1;33mPress Enter to continue\e[00m"
